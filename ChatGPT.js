@@ -89,6 +89,7 @@ console.log(output);
 
 //================= Challenge: Generate all possible combinations of two lists =============================
 
+/* 
 const fruits = ["apple", "banana", "orange"];
 const colors = ["red", "green", "blue"];
 
@@ -97,16 +98,16 @@ function generateCombinations(arr1, arr2) {
 
   for (let i = 0; i < arr1.length; i++) {
     // checking the property not necessary but wanted to learn so I added it
-    if (!obj.hasOwnProperty(arr1[i])) {
+    if (!(obj.hasOwnProperty(arr1[i]))) {
       // could also write as:
-      // if (!arr1[i] in obj) {     OR
-      // if (!obj[arr1[i]]) {
+      // if (!(arr1[i] in obj)) {     OR
+      // if (!(obj[arr1[i]])) {
       obj[arr1[i]] = [];
     }
     for (let j = 0; j < arr2.length; j++) {
       const combination = `${arr2[j]} ${arr1[i]}`;
       //includes not necessary in this case bc of iteration but wanted to learn so I added it
-      if (!obj[arr1[i]].includes(combination)) {
+      if (!(obj[arr1[i]].includes(combination))) {
         obj[arr1[i]].push(combination);
       }
     }
@@ -116,9 +117,25 @@ function generateCombinations(arr1, arr2) {
 }
 
 let output = generateCombinations(fruits, colors);
-console.log(output);
+console.log(output); 
+*/
 
 //what I learned from this: I wanted to push the results into an Object. Originally, I thought I needed to check if the property already existed. Now I realize that is not required as I could just push whatever it was currently on into the array (value of object property). Also learned about various ways to check if a property exists within an object such as hasOwnProperty(), if (__ in object), or if (object[__]). for example checking to see if the car object has a property Toyota --> car.hasOwnProperty("Toyota") OR if ("Toyota" in car) OR if (car["Toyota"]). If I wanted to check for a value inside of the property I could also use includes such as if (car["Toyota"].includes("Camry"))
+
+//I also learned steps of problem decomposition --> for this problem it looked like this:
+/* 
+Inputs: 2 arrays (fruit and colors)
+I --> O : Generate combinations of I to produce O
+Outputs: an object with properties for each fruit from the fruit array. Within each fruit property we will have values being arrays of the different combinations which will look like [color fruit]. 
+
+I will need: 
+1 - an empty object (to push results into)
+2 - nested loop (to iterate over both arrays)
+3 - check if property already exists (alleviate redundancy; conditional)
+4 - empty array (each property will have its own array to push the different combinations into)
+5 - variable named combination (to store possible combinations between the two arrays (fruits and colors))
+6 - check if value (array of combination) already exists (alleviate redundancy; conditional)  
+*/
 
 /* 
 //=========== Challenge: Find Prime Numbers level 5 - 6 (on 10 pt scale) ===============
