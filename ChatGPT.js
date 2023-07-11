@@ -83,9 +83,42 @@ console.log(output);
 
 //Output: 45 */
 
+//What I learned or got more comfortable with: needing to gather data from arrays while simultaneuosly needing data from nested arrays
+
 //Nested Loops - 3) Generating permutations and combinations:
 
 //================= Challenge: Generate all possible combinations of two lists =============================
+
+const fruits = ["apple", "banana", "orange"];
+const colors = ["red", "green", "blue"];
+
+function generateCombinations(arr1, arr2) {
+  let obj = {};
+
+  for (let i = 0; i < arr1.length; i++) {
+    // checking the property not necessary but wanted to learn so I added it
+    if (!obj.hasOwnProperty(arr1[i])) {
+      // could also write as:
+      // if (!arr1[i] in obj) {     OR
+      // if (!obj[arr1[i]]) {
+      obj[arr1[i]] = [];
+    }
+    for (let j = 0; j < arr2.length; j++) {
+      const combination = `${arr2[j]} ${arr1[i]}`;
+      //includes not necessary in this case bc of iteration but wanted to learn so I added it
+      if (!obj[arr1[i]].includes(combination)) {
+        obj[arr1[i]].push(combination);
+      }
+    }
+  }
+
+  return obj;
+}
+
+let output = generateCombinations(fruits, colors);
+console.log(output);
+
+//what I learned from this: I wanted to push the results into an Object. Originally, I thought I needed to check if the property already existed. Now I realize that is not required as I could just push whatever it was currently on into the array (value of object property). Also learned about various ways to check if a property exists within an object such as hasOwnProperty(), if (__ in object), or if (object[__]). for example checking to see if the car object has a property Toyota --> car.hasOwnProperty("Toyota") OR if ("Toyota" in car) OR if (car["Toyota"]). If I wanted to check for a value inside of the property I could also use includes such as if (car["Toyota"].includes("Camry"))
 
 /* 
 //=========== Challenge: Find Prime Numbers level 5 - 6 (on 10 pt scale) ===============
