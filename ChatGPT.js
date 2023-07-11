@@ -4,6 +4,44 @@
 
 //================ Challenge: Given two arrays, find pairs of elements that sum up to a specific target value ====================
 
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const targetSum = 7;
+
+function findPairs(arr1, arr2, sum) {
+  let newArray = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j <arr2.length; j++) {
+      if (arr1[i] + arr2[j] === targetSum) {
+        newArray.push([arr1[i], arr2[j]]);
+      }
+    }
+  }
+  return newArray;
+}
+
+// OR push into new obj intsead of new array
+
+/* function findPairs(arr1, arr2, sum) {
+    let newObj = {};
+    let counter = 0;
+    
+    for (let i = 0; i < arr1.length; i++) {
+      for (let j = 0; j <arr2.length; j++) {
+        if (arr1[i] + arr2[j] === targetSum) {
+          newObj[counter] = [arr1[i], arr2[j]]
+          counter++;
+        }
+      }
+    }
+    return newObj;
+  }
+
+ let output = findPairs(array1, array2, targetSum);
+ console.log(output); */
+
+ //what i learned from this or got more comfortable with: working with multi sets of data, pushing into new arrays or new objects
+
 //2) Multi-dimensional data processing:
 
 //================ Challenge: Given a matrix, calculate the sum of all elements ===================
