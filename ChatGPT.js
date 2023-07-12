@@ -139,7 +139,34 @@ I will need:
 
 /* 
 //=========== Challenge: Find Prime Numbers level 5 - 6 (on 10 pt scale) ===============
-Write a function named findPrimes that takes in two numbers, start and end, and returns an array of all prime numbers between start and end, inclusive. */
+Write a function named findPrimes that takes in two numbers, start and end, and returns an array of all prime numbers between start and end, inclusive. 
+
+const start = 10;
+const end = 30; 
+
+function findPrimes(numStart, numEnd) {
+  let newArray = [];
+  for () {
+    if () {
+      
+    }
+  }
+  return newArray;
+  
+}
+
+let output = findPrimes(start, end);
+console.log(output);
+
+//Prime number: a whole number greater than 1 that cannot be exactly divided by any whole number other than itself and 1
+//I: start num, end num
+//O: array of prime numbers that exist between numStart and numEnd (inclusive meaning including start and end if feasible)
+//What we will need: 
+// newArray (to store results)
+// loop (to divide against every number up to the current number)
+// conditional (check if prime)
+
+*/
 
 /* 
 

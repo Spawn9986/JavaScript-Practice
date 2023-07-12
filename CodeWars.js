@@ -31,7 +31,7 @@ return this
     .join(" "); 
 */
 
-//learned about/ got more comfortable with: refactoring code, split(), join(), map(), ensuring to not forget "return" when using inner functions so it doesnt return undefined, I dont need to push everything into a new array when using map() (after I refactored), arrow functions, 
+//learned about/ got more comfortable with: refactoring code, split(), join(), map(), ensuring to not forget "return" when using inner functions so it doesnt return undefined, I dont need to push everything into a new array when using map() (after I refactored), arrow functions,
 
 /* 
     //================= Who Likes it? - 6kyu =====================
@@ -67,7 +67,7 @@ function likes(names) {
 
 // Here is an alternate solution i found using returning an object
 
-/* 
+
 function likes(names) {
   return {
     0: 'no one likes this',
@@ -77,7 +77,7 @@ function likes(names) {
     4: `${names[0]}, ${names[1]} and ${names.length - 2} others like this`, 
   }[Math.min(4, names.length)]
 } 
-*/
+
 
 //learned about/ got more comfortable with: switch cases, could have also used .replace(regular expression) or return {0: string, 1: string, 2: string, etc}[Math.min(names.length, 4)] bc 4 would be the max and if names.length was less than 4 than it would take that instead. 
 
