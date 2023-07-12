@@ -146,13 +146,15 @@ const end = 30;
 
 function findPrimes(numStart, numEnd) {
   let newArray = [];
-  for () {
-    if () {
-      
+  for (let i = numStart; i <= numEnd; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {
+        break;
+      } else if (!(newArray.includes(i))) {
+        newArray.push(i);}
     }
   }
   return newArray;
-  
 }
 
 let output = findPrimes(start, end);
@@ -163,7 +165,8 @@ console.log(output);
 //O: array of prime numbers that exist between numStart and numEnd (inclusive meaning including start and end if feasible)
 //What we will need: 
 // newArray (to store results)
-// loop (to divide against every number up to the current number)
+// outer loop (to iterate from numStart to numEnd)
+// nested loop (to divide against every number from 2 up to the current number in the outer loop)
 // conditional (check if prime)
 
 */
