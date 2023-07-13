@@ -1,3 +1,21 @@
+//================ Challenge: Constructors: Create a rectangle with mutliple instances ====================
+/* 
+
+Write a JavaScript constructor function called Rectangle that takes in width and height as parameters. The function should create instances of a rectangle object and have the following properties and methods:
+
+Properties:
+
+width: The width of the rectangle.
+height: The height of the rectangle.
+Methods:
+
+getArea(): Returns the area of the rectangle (width * height).
+getPerimeter(): Returns the perimeter of the rectangle (2 * (width + height)).
+Your task is to implement the Rectangle constructor function and its methods 
+
+*/
+
+
 //Nested Loops are helpful when working with multiple sets of data (i.e., 2 arrays, etc.), and multi-dimensional data sets (matrices).
 
 //Nested Loops - 1) Iterating over two or more arrays:
@@ -145,7 +163,7 @@ const start = 10;
 const end = 30; 
 
 function findPrimes(numStart, numEnd) {
-  let newArray = [];
+  let primes = [];
   for (let i = numStart; i <= numEnd; i++) {
     for (let j = 2; j < i; j++) {
       if (i % j === 0) {
@@ -154,7 +172,7 @@ function findPrimes(numStart, numEnd) {
         newArray.push(i);}
     }
   }
-  return newArray;
+  return primes;
 }
 
 let output = findPrimes(start, end);
