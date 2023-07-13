@@ -7,14 +7,45 @@ Properties:
 
 width: The width of the rectangle.
 height: The height of the rectangle.
+
 Methods:
 
 getArea(): Returns the area of the rectangle (width * height).
 getPerimeter(): Returns the perimeter of the rectangle (2 * (width + height)).
 Your task is to implement the Rectangle constructor function and its methods 
 
-*/
+//================== MY SOLUTION =============
 
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+
+  this.getArea = function() {
+    return width * height;
+  };
+
+  this.getPerimeter = function() {
+    return 2 * (width + height);
+  };
+}
+
+let smallRectangle = new Rectangle(4, 2);
+let mediumRectangle = new Rectangle(8, 3);
+let largeRectangle = new Rectangle(32, 10);
+
+console.log(`The small rectangle's area is ${smallRectangle.getArea()} and Perimeter is ${smallRectangle.getPerimeter()}.`);
+console.log(`The medium rectangle's area is ${mediumRectangle.getArea()} and Perimeter is ${mediumRectangle.getPerimeter()}.`);
+console.log(`The large rectangle's area is ${largeRectangle.getArea()} and Perimeter is ${largeRectangle.getPerimeter()}.`);
+
+Output:
+
+The small rectangle's area is 8 and Perimeter is 12.
+The medium rectangle's area is 24 and Perimeter is 22.
+The large rectangle's area is 320 and Perimeter is 84.
+
+What I learned: ABout constructors and why the this keyword helps us in creating object properties, create new instances of user objects (instance specific values), and gives us the ability to access properties within the object within other methods/ functions, etc. defined within the user object that could not be done otherwise due to scope. Also learned this is very useful when trying to creat templates that you would ant different instances created from very quickly and with way less code. Also learned that the this.__ is creating new properties within the user object which will have different benefits than the parameters passed in that essentially act as local variables.
+
+*/
 
 //Nested Loops are helpful when working with multiple sets of data (i.e., 2 arrays, etc.), and multi-dimensional data sets (matrices).
 
